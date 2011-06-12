@@ -1,0 +1,30 @@
+<div class="pageTitle">
+  <h1>Allosante</h1>
+</div>
+
+<div class="toolbar">
+  <% if SyncEngine::logged_in > 0 %>
+      <div class="leftItem blueButton">
+        <a href="<%= url_for :controller => :Settings, :action => :do_sync %>">Sync</a>
+      </div>
+      <div class="rightItem regularButton">
+        <a href="<%= url_for :controller => :Settings, :action => :logout %>">Logout</a>
+      </div>
+  <% else %>
+      <div class="rightItem regularButton">
+        <a href="<%= url_for :controller => :Settings, :action => :login %>">Login</a>
+      </div>
+  <% end %>
+</div>
+
+<div class="content">
+	<p><a href="#"><span class="title">Agenda</span><span class="disclosure_indicator"/></a></p>
+    <p><a href="#"><span class="title">Annuaire</span><span class="disclosure_indicator"/></a></p>
+     <p><a href="#"><span class="title">Diagnostic</span><span class="disclosure_indicator"/></a></p>
+      <p><a href="#"><span class="title">Historique</span><span class="disclosure_indicator"/></a></p>
+	  <p><a href="#"><span class="title">Messages</span><span class="disclosure_indicator"/></a></p>
+	 <p> <a href="#"><span class="title">Profil</span><span class="disclosure_indicator"/></a></p>
+	 <p> <a href="#"><span class="title">Structures</span><span class="disclosure_indicator"/></a></p>
+	 <p> <a href="#"><span class="title">Param&eacute;tres</span><span class="disclosure_indicator"/></a></p>
+	
+</div>
