@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Senegal Python Challenge</title>
+    <link rel="stylesheet" href="/static/css/app.css" type="text/css" media="screen" title="no title" charset="utf-8">
+	<script src="http://cdn.jquerytools.org/1.2.5/full/jquery.tools.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="/static/css/overlay-apple.css"/>
+	
+  </head>
+  
+  <body>
+    <div id="site">      
+      <div id="container">
+        <div id="header">
+          <img src="/static/images/pych-logo.png" />
+        </div>
+        <div id="menu">
+          <ul>
+						{% for tab in tabs %}
+            				<li><a href="{{ tab.url }}" rel="{{tab.rel}}">{{ tab.text}}</a></li>
+						{% endfor %}
+          </ul>
+        </div>
+			
+				<!-- pour charger le login overlay -->
+			<div class="apple_overlay" id="overlay">
+				<!-- the external content is loaded inside this tag -->
+				<div class="contentWrap"></div>
+			</div>
+			
+        <div id="content">
+          {% block content %} {% endblock %}
+		
+
+		</div>
+        </div>
+      </div>
+    </div>
+    <div id="site_footer">      
+      <div id="footer">
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+	<script>
+
+	$(function() {
+
+		// if the function argument is given to overlay,
+		// it is assumed to be the onBeforeLoad event listener
+		$("a[rel]").overlay({
+
+			mask: 'grey',
+			effect: 'apple',
+
+			onBeforeLoad: function() {
+
+				// grab wrapper element inside content
+				var wrap = this.getOverlay().find(".contentWrap");
+
+				// load the page specified in the trigger
+				wrap.load(this.getTrigger().attr("href"));
+			}
+
+		});
+	});
+	</script>
+  </body>
+</html>

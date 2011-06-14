@@ -1,0 +1,19 @@
+{% extends "app.html" %}
+
+{% block content %}
+<h1>Mon profil</h1>
+
+
+<form action="" method="post">
+		<label for="first_name">Prénom</label>
+		<input id ="first_name"
+		       name="first_name"
+		       placeholder="Entrez votre prénom" value="{{ user.first_name }}"/>
+		<label for="last_name">Nom</label>
+		<input id="last_name"
+				   name="last_name"
+				   placeholder="Entrez votre nom" value='{{ user.last_name }}'/>
+	
+		<input type="submit" value="Enregistrer">
+</form>
+{% endblock %}

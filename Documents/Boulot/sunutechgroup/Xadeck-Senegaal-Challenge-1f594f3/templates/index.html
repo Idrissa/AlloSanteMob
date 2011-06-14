@@ -1,0 +1,40 @@
+{% extends "app.html" %}
+
+{% block content %}
+<link href='http://fonts.googleapis.com/css?family=Michroma' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
+
+
+<style type="text/css" media="screen">
+  h1 { font-family: 'Michroma', arial, serif; font-size:110px; color:#792911;}
+  h3 { font-family: 'Michroma', arial, serif;font-size:22px; text-align:center; }
+  .bleu{ color:#434B79;}
+  h4 { font-family: 'Orbitron', arial, serif; font-size:110px; color:#437943;}
+</style>
+
+<div id="index">  
+  <div id="introduction">
+    <br /><br /><br /><br /><br /><br />
+    <center>
+    <p>
+      <input type="button" name="demarrer" value="participer maintenant" class="demarrer" />
+    <p/>
+  </center>
+  </div>
+  <div id="compteurs">
+    <div class="box">        
+      <h1> 238 </h1>
+      <h3>challenges en cours </h3>
+    </div>        
+    <div class="box">        
+      <h1 class="bleu"> 704 </h1>
+      <h3 class="bleu">participants </h3>
+    </div>    
+    <div class="box" style="margin-top:1px;padding-top:46px;">        
+      <h4> 59 &#37; </h4>
+      <h3>challenges r&eacute;ussis </h3>
+    </div>    
+  </div>
+</div>
+
+{% endblock %}
